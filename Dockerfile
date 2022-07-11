@@ -38,7 +38,7 @@ ENV HOME=/headless \
 
 WORKDIR $HOME
 
-RUN "echo root:${VNC_PW}" | chpasswd
+RUN "echo root:88888" | chpasswd
 
 RUN apt-get update
 
