@@ -22,7 +22,6 @@ EXPOSE $VNC_PORT $NO_VNC_PORT
 
 
 USER root
-RUN "echo root:88888" | chpasswd
 ### Envrionment config
 ENV HOME=/headless \
     TERM=xterm \
