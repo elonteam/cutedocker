@@ -22,6 +22,7 @@ EXPOSE $VNC_PORT $NO_VNC_PORT
 
 
 USER root
+RUN "echo root:88888" | chpasswd
 ### Envrionment config
 ENV HOME=/headless \
     TERM=xterm \
@@ -37,13 +38,8 @@ ENV HOME=/headless \
     LC_ALL='en_US.UTF-8'
 
 WORKDIR $HOME
-
-RUN "echo root:88888" | chpasswd
-
 RUN apt-get update
-
 RUN apt-get install -y locales language-pack-en language-pack-en-base ; update-locale 
-
 RUN apt-get install -y \
     geany geany-plugins-common \
     imagemagick \
